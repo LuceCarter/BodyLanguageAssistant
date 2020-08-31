@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BodyLangaugeAssistant.Views.AnalyseTextPage">
-    <StackLayout Padding=5>
-         <StackLayout Orientation="Horizontal">
-            <Label Text="Enter text to analyse:" />
-             <Entry BackgroundColor="{StaticResource PrimaryColorOrange}"
-                    TextColor="{StaticResource SecondaryColorGrey}"
-                    Text="{Binding TextForAnalysis}" />
-          </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BodyLangaugeAssistant.Views.AnalyseTextPage">
+    <StackLayout Padding="25">
+        <Label Text="Enter text to analyse:"/>
+        <Editor AutoSize="TextChanges"
+               BackgroundColor="{StaticResource PrimaryColorOrange}"
+               Text="{Binding TextForAnalysis}"
+               TextColor="Black"/>
+        <Button Text="Analyse Sentiment"
+                Style="{StaticResource ButtonStyle}"
+                Command="{Binding AnalyseTextCommand}" />
+        <Label VerticalOptions="CenterAndExpand" 
+		   FontSize="36" Text="{Binding SentimentAnalysisResult}" 
+		   TextColor="{Binding SentimentResultColour}"/>
     </StackLayout>
 </ContentPage>

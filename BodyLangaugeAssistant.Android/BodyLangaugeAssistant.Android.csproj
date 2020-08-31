@@ -58,6 +58,9 @@
     <PackageReference Include="Refractored.MvvmHelpers">
       <Version>1.6.2</Version>
     </PackageReference>
+    <PackageReference Include="Azure.AI.TextAnalytics">
+      <Version>5.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
