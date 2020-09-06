@@ -4,8 +4,9 @@
         <Color x:Key="SecondaryColorGrey">#FF535358</Color>
         <Color x:Key="PrimaryColorOrange">#FFFFA03A</Color>       
 
-        <Style x:Key="ButtonStyle" TargetType="Button">
+        <Style TargetType="Button">
             <Setter Property="FontFamily" Value="WorkSans"/>
+            <Setter Property="FontSize" Value="24" />
             <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColorGrey}"/>
             <Setter Property="TextColor" Value="{StaticResource PrimaryColorOrange}" />                                          
         </Style>

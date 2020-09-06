@@ -1,5 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BodyLangaugeAssistant.Views.AnalyseBodyLanguagePage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 ios:Page.UseSafeArea="True"
+             x:Class="BodyLangaugeAssistant.Views.AnalyseBodyLanguagePage">
+
+    <Grid RowDefinitions="*,Auto, Auto">
+            <Image Grid.Row="0" 
+			   Aspect="AspectFill" 
+			   Source="{Binding ImageForAnalysis}" />
+		<Button Grid.Row="1" 
+				Command="{Binding TakePhotoCommand}" 
+				Text="Take a photo to analyse" 
+				VerticalOptions="Center"/>
+
+		
+		<Grid Grid.RowSpan="2" 
+			  BackgroundColor="#C0000000" 
+			  IsVisible="{Binding IsBusy}">
+            <StackLayout Orientation="Vertical" 
+						 HorizontalOptions="Center" 
+						 VerticalOptions="Center" 
+						 Spacing="40">
+                <ActivityIndicator IsRunning="true" 
+								   Color="White" 
+								   Scale="2"/>
+                <Label Text="Looking for faces..." 
+					   TextColor="White"/>
+            </StackLayout>
+        </Grid>
+		
+    </Grid>
 </ContentPage>

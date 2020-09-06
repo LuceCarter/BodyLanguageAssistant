@@ -1,28 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             ios:Page.UseSafeArea="True"
-             x:Class="BodyLangaugeAssistant.Views.MenuPage">
+             x:Class="BodyLangaugeAssistant.Views.MenuPage"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
-        <Frame BackgroundColor="{StaticResource PrimaryColorOrange}"
-               CornerRadius="0"
-               HasShadow="False"
-               Padding="24">
+        <Grid>
+            <Image Source="orange_bg"
+                   Aspect="AspectFill" />
+            <StackLayout VerticalOptions="Center">
+            <Image Source="crossed_swords"                   
+                   HeightRequest="100"
+                   WidthRequest="100"/>
+            </StackLayout>
             <Label FontFamily="WorkSans"
-                   FontSize="18"
+                   FontSize="24"
+                   VerticalOptions="End"
                    HorizontalTextAlignment="Center"
                    Text="Body Language Assistant!"
                    TextColor="Black"/>
-        </Frame>
-        <StackLayout Padding="50,0,50,50"
-                     VerticalOptions="CenterAndExpand">
-            <Button Style="{StaticResource ButtonStyle}"
-                    Text="Anaylse Sentiment"
+        </Grid>
+        <StackLayout Padding="50,0"
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="25">
+            <Button Text="Analyse Sentiment"
                     Command="{Binding AnalyseTextCommand}"/>
-            <Button Style="{StaticResource ButtonStyle}"
-                    Text="Analyse Body Language"
-                    Command="{Binding AnalyseBodyLanguageCommand}"/>
+
+            <Button Text="Analyse Emotion"
+                    Command="{Binding AnalyseBodyLanguageCommand}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
