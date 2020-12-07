@@ -2,24 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BodyLangaugeAssistant.Views.MenuPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Grid>
             <Image Source="orange_bg"
                    Aspect="AspectFill" />
-            <StackLayout VerticalOptions="Center">
+            <Label FontFamily="WorkSans"
+                   FontSize="32"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="Body Language Assistant!"                   
+                   TextColor="Black"/>
+            <StackLayout VerticalOptions="End"                         
+                         TranslationY="45">
             <Image Source="crossed_swords"                   
                    HeightRequest="100"
                    WidthRequest="100"/>
-            </StackLayout>
-            <Label FontFamily="WorkSans"
-                   FontSize="24"
-                   VerticalOptions="End"
-                   HorizontalTextAlignment="Center"
-                   Text="Body Language Assistant!"
-                   TextColor="Black"/>
+            </StackLayout>            
         </Grid>
-        <StackLayout Padding="50,0"
+        <StackLayout Padding="{StaticResource ButtonStackLayoutThickness}"
                      VerticalOptions="CenterAndExpand"
                      Spacing="25">
             <Button Text="Analyse Sentiment"

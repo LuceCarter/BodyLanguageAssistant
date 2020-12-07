@@ -19,11 +19,15 @@ namespace BodyLangaugeAssistant.ViewModels
         private StreamImageSource _imageForAnalysis;
         private MediaFile photo;
         private bool _isBusy = false;
-        private FaceClient faceClient;
+        private FaceClient faceClient;    
 
         public AnalyseBodyLanguagePageViewModel()
         {
-            TakePhotoCommand = new Command(async () => await TakePhotoAsync());
+            TakeOrPickPhotoCommand = new Command<string>(
+                execute: async (string arg) =>
+                {
+                    await TakeOrPickPhotoAsync(arg);
+                });
             faceClient = new FaceClient(new ApiKeyServiceClientCredentials(AzureKeys.FaceApiKey))
             {
                 Endpoint = AzureKeys.BaseUrl
@@ -36,7 +40,8 @@ namespace BodyLangaugeAssistant.ViewModels
             set => SetProperty(ref _imageForAnalysis, value);
         }
 
-        public ICommand TakePhotoCommand { get; }
+        public ICommand TakeOrPickPhotoCommand { get; }
+       
 
         public bool IsBusy
         {
@@ -44,16 +49,30 @@ namespace BodyLangaugeAssistant.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        private async Task TakePhotoAsync()
+        private async Task TakeOrPickPhotoAsync(string takeNewPhoto)
         {
             try
             {
                 IsBusy = true;
-                photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    PhotoSize = PhotoSize.Small
-                });
+                bool takePhoto = bool.Parse(takeNewPhoto);
 
+                if (takePhoto)
+                {
+                    photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        PhotoSize = PhotoSize.Small,
+                        DefaultCamera = CameraDevice.Front,
+                    });
+                }
+
+                else
+                {
+                    photo = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                    {
+                        PhotoSize = PhotoSize.Small
+                    });
+                }
+                
                 ImageForAnalysis = (StreamImageSource)ImageSource.FromStream(() => photo.GetStream());
 
                 using (var stream = photo.GetStreamWithImageRotatedForExternalStorage())
