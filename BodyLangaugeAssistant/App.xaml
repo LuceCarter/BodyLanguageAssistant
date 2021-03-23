@@ -2,7 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BodyLangaugeAssistant.App">
     <Application.Resources>
         <Thickness x:Key="ButtonStackLayoutThickness">50,0,50,0</Thickness>
-        <Color x:Key="SecondaryColorGrey">#FF535358</Color>
+        <Color x:Key="SecondaryColorGrey">#0F2745</Color>
         <Color x:Key="PrimaryColorOrange">#FFFFA03A</Color>       
 
         <Style TargetType="Button">

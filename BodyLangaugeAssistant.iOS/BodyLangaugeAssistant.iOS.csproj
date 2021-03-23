@@ -113,15 +113,27 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg%403x.png" />
-    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg%402x.png" />
-    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg.png" />
+    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\orange_bg.imageset\orange_bg.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\orange_bg.imageset\Contents.json">
       <Visible>False</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords%403x.png" />
-    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords%402x.png" />
-    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords.png" />
+    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\crossed_swords.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\crossed_swords.imageset\Contents.json">
       <Visible>False</Visible>
     </ImageAsset>
